@@ -806,3 +806,17 @@ services:
     labels:
       org.label-schema.group: "monitoring"
     logging: *default-logging
+    
+
+######################################################################################
+#####################          PUSHGATEWAY CONTAINER           #######################
+######################################################################################
+
+  poi-radio:
+    build: .
+      context: ./poi_radio
+    container_name: poi-radio
+    networks:
+      - monitor-net
+    ports:
+      - 8030:8030
